@@ -1,6 +1,8 @@
 import React from "react";
 import { withFormik, Field, ErrorMessage, Form } from "formik";
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 function MyForm(props) {
   const { isSubmitting, isValid } = props;
 
@@ -43,7 +45,7 @@ export default withFormik({
     };
   },
 
-  validate(values) {
+  async validate(values) {
     const errors = {};
 
     if (!values.password) {
@@ -52,7 +54,11 @@ export default withFormik({
       errors.password = "Passwrod must be at least 8 caracters";
     }
 
-    return errors;
+    await sleep(5000);
+
+    if (Object.keys(errors).length) {
+      throw errors;
+    }
   },
 
   handleSubmit(values, formikBag) {
