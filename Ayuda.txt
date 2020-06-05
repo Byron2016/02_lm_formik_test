@@ -1,0 +1,18 @@
+    ***************************************************************
+    **                                                           **
+    **                  02_lm_formik_test                        **
+    **                                                           **
+    ***************************************************************
+- 02_lm_formik_test
+	- TITULO: React Formularios – Formik
+	- REFERENCIAS
+		- https://www.youtube.com/watch?v=Dj-Kjj8ZIBU
+		
+	- PASOS
+		- npx create-react-app 02_lm_formik_test
+		- npm install formik --save
+		- npm install node-sass 
+			- Esto se hace x q se va a usar hoja de estilos en sass.
+		- Vaciar carpeta "src"
+		- Crear archivo "src/index.js"
+		- Crear archivo "src/style.scss"
