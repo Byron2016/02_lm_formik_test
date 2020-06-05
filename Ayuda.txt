@@ -16,3 +16,8 @@
 		- Vaciar carpeta "src"
 		- Crear archivo "src/index.js"
 		- Crear archivo "src/style.scss"
+		
+		- Formik
+			- Es un manejador de estado de las formas
+			- Agrega funcionalidad para evitar repitir en todas las formas.
+			- Creación de forma.
