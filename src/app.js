@@ -1,25 +1,25 @@
 import React from "react";
-import { withFormik, Field } from "formik";
+import { withFormik, Field, ErrorMessage, Form } from "formik";
 
 function MyForm(props) {
-  const { isSubmitting, isValid, handleSubmit, errors, touched } = props;
+  const { isSubmitting, isValid } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form>
       <div className="row">
         Email:
         <Field name="email" type="email" className="input" />
-        {errors.email && touched.email && (
-          <div className="error">{errors.email}</div>
-        )}
+        <ErrorMessage name="email">
+          {(message) => <div className="error">{message}</div>}
+        </ErrorMessage>
       </div>
 
       <div className="row">
         Password:
         <Field name="password" type="password" className="input" />
-        {errors.password && touched.password && (
-          <div className="error">{errors.password}</div>
-        )}
+        <ErrorMessage name="password">
+          {(message) => <div className="error">{message}</div>}
+        </ErrorMessage>
       </div>
 
       <div className="row">
@@ -31,11 +31,18 @@ function MyForm(props) {
           Submit
         </button>
       </div>
-    </form>
+    </Form>
   );
 }
 
 export default withFormik({
+  mapPropsToValues(props) {
+    return {
+      email: props.defaultEmail,
+      password: "",
+    };
+  },
+
   validate(values) {
     const errors = {};
 
