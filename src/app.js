@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 function MyForm(props) {
-	return (
-		<div>
-			hola
-		</div>
-	);
-
+  return (
+    <form>
+      <input name="email" type="email" />
+      <input name="password" type="password" />
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 
 export default MyForm;
